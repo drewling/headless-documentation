@@ -5,7 +5,7 @@ description: This tutorial guides users on how to transform their React componen
 
 The **@faustwp/block-editor-utils** package provides helper functions for converting existing React components into Gutenberg blocks. This is very useful for when you already have some components and you want to test them in Gutenberg without needing to write any code to port them. You will also be able to re-use the same React component in both places; the Headless side and the Editor side.
 
-Make sure you have completed the initial setup for Faust at [Getting Started.](https://faustjs.org/tutorial/get-started-with-faust/)
+Make sure you have completed the initial setup for Faust at [Getting Started.](https://faustjs.org/tutorial/get-started-with-faust/)
 
 #### Quick Start
 
@@ -41,7 +41,7 @@ You should see the following file and folder structure now:
     └── style.scssCode language: CSS (css)
 ```
 
-Now we’re ready to explore the process of using this package’s helpers to convert a React component to blocks.
+Now we're ready to explore the process of using this package's helpers to convert a React component to blocks.
 
 Then start the development server:
 
@@ -75,7 +75,7 @@ export default MyFirstBlock
 Code language: JavaScript (javascript)
 ```
 
-This pure React component consists of `div` element with three attributes that controls the content and the style of the box. Let’s describe them briefly:
+This pure React component consists of `div` element with three attributes that controls the content and the style of the box. Let's describe them briefly:
 
 - **message**: is a text message that gets displayed.
 - **bg_color**: controls the background color.
@@ -105,15 +105,15 @@ registerFaustBlock(MyFirstBlock, {blockJson: metadata})
 Code language: JavaScript (javascript)
 ```
 
-The `registerFaustBlock`  helper takes the following arguments:
+The `registerFaustBlock` helper takes the following arguments:
 
-- **component**: the actual React component to convert into a Gutenberg block. (**Required**).
+- **component**: the actual React component to convert into a Gutenberg block. (**Required**).
 - **metadata**: a metadata object that contains several fields:
-  - **blockJson**: the `block.json` object that describes the component attributes. (**Required**).
-  - **edit**: provides a custom Edit function that describes the structure of your block in the context of the editor. (**Optional**).
-  - **save**: provides a custom Save function that defines the way in which the different attributes should be combined into the final markup. (**Optional**).
+  - **blockJson**: the `block.json` object that describes the component attributes. (**Required**).
+  - **edit**: provides a custom Edit function that describes the structure of your block in the context of the editor. (**Optional**).
+  - **save**: provides a custom Save function that defines the way in which the different attributes should be combined into the final markup. (**Optional**).
 
-Now let’s take a look at the `block.json` that was created when we ran the block generator. Since we declared three configurable attributes for our component, we need to declare them as attributes here.
+Now let's take a look at the `block.json` that was created when we ran the block generator. Since we declared three configurable attributes for our component, we need to declare them as attributes here.
 
 Here is the final `block.json` with the assigned attributes object:
 
@@ -158,7 +158,7 @@ You can interact with the form fields, and then click outside the block contents
 
 #### Configuring the Form Controls
 
-So far we’ve been able to render the React component in the Block Editor, change some of the attributes, and reflect the changes in the page.
+So far we've been able to render the React component in the Block Editor, change some of the attributes, and reflect the changes in the page.
 
 However, a few of the attributes that control the color are using [text field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) controls, which may prove problematic since they allow invalid values. What if we wanted to use a proper color picker component?
 
@@ -198,17 +198,17 @@ Once you update the component, you can refresh the page and create a new block. 
 
 #### Form Control Reference List
 
-So far we’ve seen examples of two controls: The `ColorPicker` handled by the `control: "color"` and the `TextControl`, which is set as default for every `type: "string"` in the `block.json` attributes list.
+So far we've seen examples of two controls: The `ColorPicker` handled by the `control: "color"` and the `TextControl`, which is set as default for every `type: "string"` in the `block.json` attributes list.
 
 The corresponding table represents the mapping logic between the `block.json` attributes and their associated fields:
 
 | type    | field           | comment                                                                                                                                |
 | ------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| string  | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `text`   |
-| boolean | RadioControl    | Renders a [RadioControl field](https://developer.wordpress.org/block-editor/reference-guides/components/radio-control/)                |
-| integer | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `number` |
-| number  | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `number` |
-| object  | TextAreaControl | Renders a [TextAreaControl field](https://developer.wordpress.org/block-editor/reference-guides/components/textarea-control/)          |
+| string  | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `text`   |
+| boolean | RadioControl    | Renders a [RadioControl field](https://developer.wordpress.org/block-editor/reference-guides/components/radio-control/)                |
+| integer | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `number` |
+| number  | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `number` |
+| object  | TextAreaControl | Renders a [TextAreaControl field](https://developer.wordpress.org/block-editor/reference-guides/components/textarea-control/)          |
 
 Table of `block.json` attributes types to Editor Controls
 
@@ -216,14 +216,14 @@ The following control types will also be available when using the `editorFields`
 
 | control  | field           | comment                                                                                                                                |
 | -------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| color    | ColorPicker     | Renders a [ColorPicker field](https://developer.wordpress.org/block-editor/reference-guides/components/color-picker/)                  |
-| text     | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `text`   |
-| textarea | TextAreaControl | Renders a [TextAreaControl field](https://developer.wordpress.org/block-editor/reference-guides/components/textarea-control/)          |
-| radio    | RadioControl    | Renders a [RadioControl field](https://developer.wordpress.org/block-editor/reference-guides/components/radio-control/)                |
-| select   | SelectControl   | Renders a [SelectControl field](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)              |
-| range    | RangeControl    | Renders a [RangeControl field](https://developer.wordpress.org/block-editor/reference-guides/components/range-control/)                |
-| number   | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `number` |
-| checkbox | CheckBoxControl | Renders a [CheckBoxControl field](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)          |
+| color    | ColorPicker     | Renders a [ColorPicker field](https://developer.wordpress.org/block-editor/reference-guides/components/color-picker/)                  |
+| text     | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `text`   |
+| textarea | TextAreaControl | Renders a [TextAreaControl field](https://developer.wordpress.org/block-editor/reference-guides/components/textarea-control/)          |
+| radio    | RadioControl    | Renders a [RadioControl field](https://developer.wordpress.org/block-editor/reference-guides/components/radio-control/)                |
+| select   | SelectControl   | Renders a [SelectControl field](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)              |
+| range    | RangeControl    | Renders a [RangeControl field](https://developer.wordpress.org/block-editor/reference-guides/components/range-control/)                |
+| number   | TextControl     | Renders a [TextControl field](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/) of type `number` |
+| checkbox | CheckBoxControl | Renders a [CheckBoxControl field](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)          |
 
 **NOTE**:  
 The `editorFields` configuration provides necessary hints for the helper to render the specified controls. It always overrides any configuration that is declared in the `block.json` attributes section. If you are not seeing the appropriate control used, check that your `editorFields` contain the correct attribute name and the correct `control` property.

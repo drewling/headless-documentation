@@ -7,7 +7,7 @@ The **Gutenberg Blocks Provider and Viewer** are a pair of functions that work t
 
 #### Quick Start
 
-Make sure you have completed the initial setup for Faust at [Getting Started.](https://faustjs.org/tutorial/get-started-with-faust/)
+Make sure you have completed the initial setup for Faust at [Getting Started.](https://faustjs.org/tutorial/get-started-with-faust/)
 
 Install the blocks package with its peer dependencies:
 
@@ -15,14 +15,14 @@ Install the blocks package with its peer dependencies:
 npm i @wordpress/style-engine @faustwp/blocksCode language: CSS (css)
 ```
 
-Create a new folder inside your application root that you will place all the blocks. For conventional reasons, we name it `wp-blocks`.
+Create a new folder inside your application root that you will place all the blocks. For conventional reasons, we name it `wp-blocks`.
 
 ```
 // wp-blocks/index.js
 export default {};Code language: JavaScript (javascript)
 ```
 
-Open `_app.js` and import the blocks provider, passing the list of blocks in the `config` property:
+Open `_app.js` and import the blocks provider, passing the list of blocks in the `config` property:
 
 ```
 import { WordPressBlocksProvider } from '@faustwp/blocks';
@@ -39,7 +39,7 @@ import blocks from '../wp-blocks';
 Code language: JavaScript (javascript)
 ```
 
-Then, inside your templates you need to pass on the `editorBlocks` data in your `WordPressBlocksViewer`. The helper function `flatListToHierarchical` is referenced [here](https://www.wpgraphql.com/docs/menus#hierarchical-data):
+Then, inside your templates you need to pass on the `editorBlocks` data in your `WordPressBlocksViewer`. The helper function `flatListToHierarchical` is referenced [here](https://www.wpgraphql.com/docs/menus#hierarchical-data):
 
 ```
 // wp-templates/single.js
@@ -55,7 +55,7 @@ export default function Component(props) {
 Code language: JavaScript (javascript)
 ```
 
-Example `editorBlocks` GraphQL query fragment that you need to use to fetch the editorBlocks.
+Example `editorBlocks` GraphQL query fragment that you need to use to fetch the editorBlocks.
 
 ```
 ${components.CoreParagraph.fragments.entry}
@@ -69,13 +69,13 @@ editorBlocks(flat: false) {
 Code language: JavaScript (javascript)
 ```
 
-**Note:** Setting `flat: false` above returns separate nodes with their own arrays. By default, `editorBlocks` brings all the nodes back in one array instead.
+**Note:** Setting `flat: false` above returns separate nodes with their own arrays. By default, `editorBlocks` brings all the nodes back in one array instead.
 
 #### A Simple Block Example
 
-This is a simple block called `CoreParagraph`. The block is a `p` tag that sets its content to `attributes.content` which is passed in from the props.
+This is a simple block called `CoreParagraph`. The block is a `p` tag that sets its content to `attributes.content` which is passed in from the props.
 
-`CoreParagraph.fragments` does a WPGraphQL query for the `content` and sets it as the fragment `CoreParagraphFragment`.
+`CoreParagraph.fragments` does a WPGraphQL query for the `content` and sets it as the fragment `CoreParagraphFragment`.
 
 ```
 import { gql } from '@apollo/client';
@@ -106,9 +106,9 @@ CoreParagraph.displayName = 'CoreParagraph';
 Code language: JavaScript (javascript)
 ```
 
-**Note:** We added a `displayName` property here to make sure that the `__typename` field in the editorBlocks query matches this value. For production builds, it is required to use either a `displayName="NameOfBlock"` or a `config.name="NameOfBlock"` properties for the`WordPressBlocksViewer` component to resolve and render the block properly.
+**Note:** We added a `displayName` property here to make sure that the `__typename` field in the editorBlocks query matches this value. For production builds, it is required to use either a `displayName="NameOfBlock"` or a `config.name="NameOfBlock"` properties for the`WordPressBlocksViewer` component to resolve and render the block properly.
 
-Export the block in `wp-blocks/index.js`:
+Export the block in `wp-blocks/index.js`:
 
 ```
 import CoreParagraph from './CoreParagraph';
@@ -119,8 +119,8 @@ export default {
 
 #### Further Learning
 
-More details on the [WordPressBlocksProvider](https://faustjs.org/reference/wordpressblocksprovider/).
+More details on the [WordPressBlocksProvider](https://faustjs.org/reference/wordpressblocksprovider/).
 
-More details on the [WordPressBlocksViewer](https://faustjs.org/reference/wordpressblocksviewer/).
+More details on the [WordPressBlocksViewer](https://faustjs.org/reference/wordpressblocksviewer/).
 
-Continue learning about the project structure, how to change styles, layout, etc. by referencing the [Example Project Walkthrough Structure](https://faustjs.org/guide/how-to-use-the-faust-example-project/).
+Continue learning about the project structure, how to change styles, layout, etc. by referencing the [Example Project Walkthrough Structure](https://faustjs.org/guide/how-to-use-the-faust-example-project/).
