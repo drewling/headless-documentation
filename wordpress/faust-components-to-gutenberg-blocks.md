@@ -26,7 +26,7 @@ $ npm i @faustwp/block-editor-utils
 You should see the following file and folder structure now:
 
 ```
-❯ tree -L 2 .
+> tree -L 2 .
 .
 ├── my-first-block.php
 ├── package-lock.json
