@@ -1,3 +1,8 @@
+---
+title: Get started with Faust
+description: The tutorial will introduce you to the Faust framework, and the complete cycle of application creation, configuration, and deployment as a developer of a Headless site using WordPress.
+---
+
 # Get started with Faust
 
 The tutorial will introduce you to the Faust framework, and the complete cycle of application creation, configuration, and deployment as a developer of a Headless site using WordPress. It assumes you are comfortable with the command line, and understand the basics of JavaScript, WordPress, and Bash.
