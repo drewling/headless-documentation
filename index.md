@@ -5,7 +5,7 @@ description: A community based repository for all things headless. Want to Contr
 
 # Headless.com - Docs
 
-A community based repository for all things headless. Want to Contribute?
+A community based repository for all things headless. Want to [Contribute|https://github.com/drewling/headless-documentation]?
 
 <div class='cards'>
   <a href='/' class='card'>
