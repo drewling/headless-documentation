@@ -1,9 +1,11 @@
+---
+title: Get started with WP Content Blocks
+description: The tutorial will introduce you to the WP Content Blocks
+---
 
-**`wp-graphql-content-blocks` **is a plugin that allows querying Gutenberg blocks with WPGraphQL. 
 
 
-
-#### Introduction
+## Introduction
 
 
 
