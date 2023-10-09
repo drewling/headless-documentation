@@ -14,38 +14,34 @@ Follow the quick-start guide of the [create-block](https://developer.wordpress.o
 In this guide we are creating a new plugin named `my-first-block`. First, navigate to the plugins folder of your WordPress app. Then run this command:
 
 ```
-$ npx @wordpress/create-block@latest my-first-block
+npm @wordpress/create-block@latest my-first-block
 ```
 
 Install the **block-editor-utils** package:
 
 ```
-$ npm i @faustwp/block-editor-utils
+npm i @faustwp/block-editor-utils
 ```
 
 You should see the following file and folder structure now:
 
-```
-tree -L 2 .
-my-first-block.php
-package-lock.json
-package.json
-readme.txt
-src
-block.json
-edit.js
-editor.scss
-index.js
-save.js
-style.scssCode language: CSS (css)
-```
-
+├── package.json
+├── package-lock.json
+├── src/
+│   ├── block.json
+│   ├── edit.js
+│   ├── editor.scss
+│   ├── index.js
+│   ├── save.js
+│   └── style.scss
+├── my-first-block.php
+└── readme.txt
 Now we're ready to explore the process of using this package's helpers to convert a React component to blocks.
 
 Then start the development server:
 
 ```
-$ npm run start
+npm run start
 ```
 
 #### Porting A Simple Component
