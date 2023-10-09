@@ -27,18 +27,17 @@ You should see the following file and folder structure now:
 
 ```
 tree -L 2 .
-
-├── my-first-block.php
-├── package-lock.json
-├── package.json
-├── readme.txt
-├── src
-│   ├── block.json
-│   ├── edit.js
-│   ├── editor.scss
-│   ├── index.js
-│   ├── save.js
-└── └── style.scssCode language: CSS (css)
+my-first-block.php
+package-lock.json
+package.json
+readme.txt
+src
+block.json
+edit.js
+editor.scss
+index.js
+save.js
+style.scssCode language: CSS (css)
 ```
 
 Now we're ready to explore the process of using this package's helpers to convert a React component to blocks.
