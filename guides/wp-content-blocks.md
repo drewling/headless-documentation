@@ -1,6 +1,6 @@
 ---
 title: Get started with WP Content Blocks
-description: The tutorial will introduce you to the WP Content Blocks
+description: The tutorial will introduce you to the WP Content Blocks plugin.
 ---
 
 
