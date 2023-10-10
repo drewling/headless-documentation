@@ -15,6 +15,7 @@ jobs:
         with:
           repository: drewling/headless-frontend
           token: ${{ secrets.GH_PAT }}
+          path: apps
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@latest
         with:
