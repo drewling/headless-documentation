@@ -4,11 +4,11 @@ on:
     branches:
       - master
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, closed]
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: "!contains(github.event.head_commit.message, '[skip ci]') && github.event.pull_request.merged == true"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
