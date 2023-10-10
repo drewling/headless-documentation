@@ -3,7 +3,7 @@ title: Built in CSS support
 description: Get to know more about Next.js with the frequently asked questions.
 ---
 
-# Built-In CSS Support
+# Headless.com - Docs
 
 <div class='cards'>
   <a href='/' class='card'>
