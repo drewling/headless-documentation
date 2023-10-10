@@ -16,6 +16,16 @@ jobs:
           repository: drewling/headless-frontend
           token: ${{ secrets.GH_PAT }}
           path: apps/docs
+
+      - name: Install Dependencies and Build
+        run: |
+          cd apps/docs
+          npm install
+          npm run build
+
+      - name: List .next contents
+        run: ls -la apps/docs/.next
+
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@latest
         with:
