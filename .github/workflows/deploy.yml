@@ -19,7 +19,6 @@ jobs:
 
       - name: Install Dependencies and Build
         run: |
-          cd apps/docs
           npm install
           npm run build
 
