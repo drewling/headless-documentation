@@ -14,7 +14,7 @@ description: Get to know more about Next.js with the frequently asked questions.
     A short guide on making your first deploy on Headless Wordpress in a couple of minutes.
   </a>
   <a href='/' class='card'>
-    <h5>Backend & CMSs</h5>
+    <h5>Backend & CMSs </h5>
     A short guide on making your first deploy on Headless Wordpress in a couple of minutes.
   </a>
   <a href='/' class='card'>
