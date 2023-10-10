@@ -1,9 +1,9 @@
 ---
-title: Built in CSS support
-description: Get to know more about next.js with the frequently asked questions.
+title: Headless.com - Docs
+description: Get to know more about Next.js with the frequently asked questions.
 ---
 
-# Headless.com - Docs
+# Headless.com - Documentation
 
 <div class='cards'>
   <a href='/' class='card'>
